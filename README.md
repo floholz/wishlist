@@ -56,3 +56,7 @@ docker compose up -d --build
 ```
 
 Rate limiting is enabled and uses traefik's `X-Real-IP` header (set in the init migration). If you expose the binary without a proxy, remove that trusted header in `/_/ → Settings`.
+
+## License
+
+[MIT](LICENSE)
