@@ -1,6 +1,6 @@
 import type { Messages } from './types'
 
-// Deutsch — informelles „du“, wie bei Wunschzetteln unter Freunden üblich.
+// Deutsch - informelles „du“, wie bei Wunschzetteln unter Freunden üblich.
 const de: Messages = {
   common: {
     signIn: 'Anmelden',
@@ -232,7 +232,7 @@ const de: Messages = {
     howLink: 'So funktioniert’s',
     free: 'Kostenlos. Ohne Anmeldung. Funktioniert super auf dem Handy.',
     mock: {
-      title: 'Lenas Weihnachtsliste',
+      title: 'Maries Weihnachtsliste',
       item1: 'Wollschal, dunkelgrün',
       item2: 'Der neue Murakami',
       item3: 'Pour-over-Kaffeeset',
