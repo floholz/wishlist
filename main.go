@@ -52,9 +52,23 @@ func main() {
 		}
 		return e.Next()
 	})
+	// Signing up with Google creates an account too, so it follows the same policy.
+	app.OnRecordAuthWithOAuth2Request("users").BindFunc(func(e *core.RecordAuthWithOAuth2RequestEvent) error {
+		if e.IsNewRecord && !registrationOpen() {
+			return uerr(403, "registration_closed", "Registration is closed on this instance.").api()
+		}
+		return e.Next()
+	})
+	app.OnRecordAuthRequest("users").BindFunc(func(e *core.RecordAuthRequestEvent) error {
+		fillMissingAvatar(e)
+		return e.Next()
+	})
 
 	app.OnServe().BindFunc(func(e *core.ServeEvent) error {
 		if err := bootstrapSuperuser(app); err != nil {
+			return err
+		}
+		if err := configureGoogle(app); err != nil {
 			return err
 		}
 		ui, err := fs.Sub(uiEmbed, "ui/dist")

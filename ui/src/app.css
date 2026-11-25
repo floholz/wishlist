@@ -58,7 +58,8 @@ button:disabled { opacity: .5; cursor: default; }
 .bar.scrolled { border-bottom-color: var(--line); }
 .brand { display: inline-flex; align-items: center; gap: .55rem; font-weight: 700; font-size: 1.2rem; text-decoration: none; letter-spacing: -.01em; }
 .brand img { width: 1.9rem; height: 1.9rem; }
-.avatar { width: 2.2rem; height: 2.2rem; border-radius: 999px; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 600; font-size: .95rem; text-transform: uppercase; }
+.avatar img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+.avatar { overflow: hidden; width: 2.2rem; height: 2.2rem; border-radius: 999px; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 600; font-size: .95rem; text-transform: uppercase; }
 
 /* ---------- menus & dialogs ---------- */
 .menu { position: absolute; right: 0; top: calc(100% + .25rem); min-width: 13rem; background: var(--panel); border: 1px solid var(--line);

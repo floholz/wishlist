@@ -57,6 +57,14 @@ docker compose up -d --build
 
 Rate limiting is enabled and uses traefik's `X-Real-IP` header (set in the init migration). If you expose the binary without a proxy, remove that trusted header in `/_/ → Settings`.
 
+## Sign in with Google
+
+1. In the [Google Cloud console](https://console.cloud.google.com/apis/credentials), create an **OAuth client ID** of type *Web application*.
+2. Add `https://<your-domain>/api/oauth2-redirect` as an authorized redirect URI (`http://localhost:8080/api/oauth2-redirect` for local dev).
+3. Set `WISHLIST_GOOGLE_CLIENT_ID` and `WISHLIST_GOOGLE_CLIENT_SECRET`. They're applied on every start.
+
+The "Continue with Google" button only shows up once Google is configured. You can also set it up by hand in `/_/ → users → Options → OAuth2` instead. With `WISHLIST_REGISTRATION=false`, Google can't create new accounts either, but existing users can still sign in with it. A Google account with the same email as an existing account signs into that account.
+
 ## License
 
 [MIT](LICENSE)

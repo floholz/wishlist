@@ -12,6 +12,9 @@ services:
       # optional: PocketBase superuser for the admin UI at /_/ (created once, on first start)
       # WISHLIST_ADMIN_EMAIL: you@example.com
       # WISHLIST_ADMIN_PASSWORD: change-me-please
+      # optional: "Continue with Google" (redirect URI: https://<domain>/api/oauth2-redirect)
+      # WISHLIST_GOOGLE_CLIENT_ID: xxx.apps.googleusercontent.com
+      # WISHLIST_GOOGLE_CLIENT_SECRET: xxx
     networks: [traefik]
     labels:
       traefik.enable: "true"
